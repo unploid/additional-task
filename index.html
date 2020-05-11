@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Дополнительные задания</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <style>
+        input[type="number"] {
+            width: 5em;
+            margin-right: 10px;
+        }
+
+        table, td, th {
+            border-collapse: collapse;
+            border:1px solid black;
+        }
+        .task-header > td {
+            border-bottom: 0px;
+            vertical-align: bottom;
+        }
+
+        .task-description {
+            border-top: 0px;
+        }
+
+        .accordion [type=checkbox] ~ label {
+            text-decoration: underline;
+            color: blue;
+        }
+        .accordion [type=checkbox] {
+            display:none;
+        }
+        .accordion .content {
+            display:none;
+            transition: all .5s ease-out;
+        }
+        .accordion [type=checkbox]:checked ~ label::after {
+            content: ":";
+        }
+        .accordion [type=checkbox]:checked ~ label ~ .content {
+            display:block;
+            margin-top: 0px;
+        }
+    </style>
+    <script src="tasks.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <div class="chapters">
+            <h1 id="start">Дополнительные задания</h1>
+            <p id="requestIndicator">Отправка запроса...</p>
+            <p id="description"></p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th width="70%">
+                        Задание
+                    </th>
+                    <th width="30%">
+                        Оценка
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="additionTasks"></tbody>
+        </table>
+    </div>
+</body>
+</html>
